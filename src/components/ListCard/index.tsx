@@ -4,7 +4,7 @@ import { ListaCardS } from './styles'
 
 const ListCard = () => (
     <>
-        <ListaCardS>
+        <ListaCardS className='Container'>
             <Card />
             <Card />
 

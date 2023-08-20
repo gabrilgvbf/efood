@@ -7,10 +7,11 @@ import ListCard from './components/ListCard';
 function App() {
   return (
     <>
+
+
       <Header />
-      <div className="Container">
-        <ListCard />
-      </div>
+      <ListCard />
+
     </>
   );
 }
