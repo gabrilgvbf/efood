@@ -1,13 +1,17 @@
 
 
 import './App.css';
-import Header from './components/header';
+import Header from './components/Header';
+import ListCard from './components/ListCard';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header />
-    </div>
+      <div className="Container">
+        <ListCard />
+      </div>
+    </>
   );
 }
 

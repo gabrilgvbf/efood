@@ -1,4 +1,19 @@
-.App {
-  width: 1024px;
-  height: auto;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Container {
+  padding: 64px 171px 40px;
+  max-width: 1024px;
+  margin: 0 auto;
+
+}
+
+.FontG {
+  font-family: 'Roboto';
+  font-weight: 900;
+  font-size: 38px;
+  color: #E66767;
 }
