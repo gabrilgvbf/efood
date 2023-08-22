@@ -2,8 +2,8 @@ import { SHeader, Logo, Hero } from "./styles"
 import EfoodLogo from '../../images/logo.png'
 
 const Header = () => (
-    <SHeader>
-        <Hero >
+    <SHeader >
+        <Hero className="Container">
 
             <Logo>
                 <img src={EfoodLogo} alt="LogoEfood" />
