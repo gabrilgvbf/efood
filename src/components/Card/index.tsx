@@ -1,4 +1,4 @@
-import { CardS, Nota, HeaderP, TextoP, ImagemP, BotaoP, DescriçãoP } from "./styles"
+import { CardS, Nota, HeaderP, TextoP, ImagemP, BotaoP, DescriçãoP, Tag } from "./styles"
 import Pjapones from "./../../images/pjapones.png"
 import Estrela from "./../../images/estrela.png"
 
@@ -6,7 +6,11 @@ import Estrela from "./../../images/estrela.png"
 const Card = () => (
     <>
         <CardS>
-            <ImagemP><img src={Pjapones}></img></ImagemP>
+            <ImagemP>
+
+                <img src={Pjapones}></img>
+                <Tag><h3>Teste</h3></Tag>
+            </ImagemP>
 
             <DescriçãoP>
                 <HeaderP>

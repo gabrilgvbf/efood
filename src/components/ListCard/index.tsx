@@ -7,6 +7,10 @@ const ListCard = () => (
         <ListaCardS className='Container'>
             <Card />
             <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
 
         </ListaCardS>
     </>
