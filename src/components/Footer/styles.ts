@@ -28,6 +28,17 @@ img{
     width:100%;
 }
 `
+export const RedesSociais = styled.div`
+display:flex;
+justify-content:center;
+margin:32px 0 80px;
+
+img{
+    margin-left:8px;
+}
+`
+
+
 export const STexto = styled.h3`
 font-family: Roboto;
 font-size: 10px;

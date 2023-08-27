@@ -18,6 +18,8 @@ export const Hero = styled.div`
 
 padding:130px 0 40px;
 
+text-align:center;
+
 }
 `
 export const Logo = styled.div`

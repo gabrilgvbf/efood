@@ -8,7 +8,7 @@ const Header = () => (
             <Logo>
                 <img src={EfoodLogo} alt="LogoEfood" />
             </Logo>
-            <h2 className="FontG">Viva experiências gastronômicas no conforto da sua casa</h2>
+            <h2 className="FontG">Viva experiências gastronômicas <br /> no conforto da sua casa</h2>
         </Hero>
     </SHeader>
 )
