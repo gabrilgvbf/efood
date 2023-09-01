@@ -1,17 +1,19 @@
 import styled from 'styled-components'
 
 export const CardS = styled.div`
-width:472px;
+width:320px;
 border: 1px solid #E66767;
 display:grid;
+background-color: #E66767;
+
 
 `
 export const ImagemP = styled.div`
+margin:6px auto;
+width:304px;
+height:167px;
 
-width:100%;
-height:217px;
-padding-bottom:8px;
-position:relative;
+
 
 img{
     width:100%;
@@ -27,32 +29,28 @@ export const HeaderP = styled.div`
 display: flex;
 justify-content:space-between;
 align-items: center;
-color: #E66767;
-font-size: 18px;
+color: #FFEBD9;
+font-size: 16px;
 font-weight: 700;
 padding-bottom: 16px;
 
 `
 
-export const Nota = styled.div`
-align-items:center;
-margin-left: 20px;
-display: flex;
 
-`
 
 export const TextoP = styled.h3`
 font-size: 14px;
 font-weight: 400;
-color: #E66767;
+color: #FFEBD9;
 padding-bottom: 18px;
 `
 
 export const BotaoP = styled.button`
-background-color: #E66767;
-color: #fff;
-width: 82px;
-height: 24px;
+background-color: #FFEBD9;
+color: #E66767;
+width: 100%;
+height:24px;
+
 border: none;
 font-size: 14px;
 font-weight: 700;

@@ -1,17 +1,14 @@
 
 
 import './App.css';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import ListCard from './components/ListCard';
+import Home from './Pages/Home';
+import Perfil from './Pages/Perfil';
 
 function App() {
   return (
     <>
+      <Perfil />
 
-      <Header />
-      <ListCard />
-      <Footer />
 
     </>
   );
