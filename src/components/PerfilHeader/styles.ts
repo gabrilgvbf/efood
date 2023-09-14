@@ -13,19 +13,20 @@ padding-bottom:64.5px;
 
 
 export const Hero = styled.div`
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding-top:63px;
 
+h3{
 
-.FontG{
-
-padding:130px 0 40px;
-
-text-align:center;
+color:#E66767;
 
 }
 `
 export const Logo = styled.div`
 margin:0 auto;
-padding-top:40px;
+
 width:125px;
 img{
     width:100%;

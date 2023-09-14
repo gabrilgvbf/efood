@@ -1,30 +1,54 @@
-import { CardS, HeaderP, TextoP, ImagemP, BotaoP, DescriçãoP, Tag } from "./styles"
+import { CardS, HeaderP, TextoP, ImagemP, BotaoP, DescriçãoP, Tag, Popup } from "./styles"
 import Pjapones from "./../../images/pjapones.png"
 import Estrela from "./../../images/estrela.png"
+import { useState } from "react"
 
 
-const PerfilCard = () => (
-    <>
-        <CardS>
-            <ImagemP>
 
-                <img src={Pjapones}></img>
 
-            </ImagemP>
 
-            <DescriçãoP>
-                <HeaderP>
-                    <h3> Hioki Sushi</h3>
+const PerfilCard = () => {
 
-                </HeaderP>
+    const [popupModal, setpopupModal] = useState(false)
 
-                <TextoP>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda vel, pariatur dignissimos eligendi, consequatur nesciunt nam repellendus veniam accusantium nostrum perspiciatis, nulla eum architecto modi laborum. Placeat veritatis alias velit!</TextoP>
+    const OpenPopup = () => setpopupModal(true)
+    const ClosePopup = () => setpopupModal(false)
 
-                <BotaoP>Adicionar ao carrinho</BotaoP>
-            </DescriçãoP>
-        </CardS>
-    </>
-)
+    return (
+        <>
+            <CardS>
+                <ImagemP>
+
+                    <img src={Pjapones}></img>
+
+                </ImagemP>
+
+                <DescriçãoP>
+                    <HeaderP>
+                        <h3> Hioki Sushi</h3>
+
+                    </HeaderP>
+
+                    <TextoP>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda vel, pariatur dignissimos eligendi, consequatur nesciunt nam repellendus veniam accusantium nostrum perspiciatis, nulla eum architecto modi laborum. Placeat veritatis alias velit!</TextoP>
+
+                    <BotaoP onClick={OpenPopup}>Adicionar ao carrinho</BotaoP>
+                </DescriçãoP>
+
+            </CardS>
+            {popupModal && (
+                <Popup>
+                    <div id="popup1" className="overlay">
+                        <div className="popup">
+                            <h3>Here i am</h3>
+                            <button className="close" onClick={ClosePopup}>&times;</button>
+                        </div>
+                    </div>
+                </Popup>
+            )}
+        </>
+    )
+
+}
 
 
 export default PerfilCard

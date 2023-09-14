@@ -1,14 +1,19 @@
 import React from 'react'
 import PerfilCard from '../PefilCard/index'
-import { ListaCardS, HeroPerfil, Nacio, NomePerfil } from './styles'
+import { ListaCardS, HeroPerfil, Nacio, NomePerfil, HeaderHeroPerfil } from './styles'
 
 
 const PerfilListCard = () => (
     <>
+
         <HeroPerfil className='Container'>
-            <Nacio>Italiana</Nacio>
-            <NomePerfil>La Dolce Vita Trattoria</NomePerfil>
+            <HeaderHeroPerfil>
+                <Nacio>Italiana</Nacio>
+                <NomePerfil>La Dolce Vita Trattoria</NomePerfil>
+            </HeaderHeroPerfil>
         </HeroPerfil>
+
+
         <ListaCardS className='Container'>
             <PerfilCard />
             <PerfilCard />

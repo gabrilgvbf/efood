@@ -7,6 +7,7 @@ display:grid;
 background-color: #E66767;
 
 
+
 `
 export const ImagemP = styled.div`
 margin:6px auto;
@@ -50,7 +51,7 @@ background-color: #FFEBD9;
 color: #E66767;
 width: 100%;
 height:24px;
-
+cursor:pointer;
 border: none;
 font-size: 14px;
 font-weight: 700;
@@ -77,3 +78,36 @@ font-weight:700;
     }
 
 `
+
+export const Popup = styled.div`
+display:block;
+align-items:center;
+z-index:9999;
+transition:all 5s ease-in-out;
+content:"";
+width:300px;
+height:300px;
+background:rgba(0,0,0,.7);
+transition:opacity 500ms;
+
+
+.popup{
+    position:relative;
+    transition: all 5s ease-in-out;
+}
+
+
+.close{
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+
+`
+
+
