@@ -80,32 +80,61 @@ font-weight:700;
 `
 
 export const Popup = styled.div`
-display:block;
-align-items:center;
-z-index:9999;
-transition:all 5s ease-in-out;
-content:"";
-width:300px;
-height:300px;
+position:fixed;
+top:0;
+left:0;
+right:0;
 background:rgba(0,0,0,.7);
-transition:opacity 500ms;
+z-index:1000;
 
+.overlay{
+    display:flex;
+    
+   
 
-.popup{
-    position:relative;
-    transition: all 5s ease-in-out;
+    position:fixed;
+    top:48%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    padding:32px;
+    background-color:#E66767;
+    width:1024px;
+
+    .close{ 
+    position:absolute;
+    top:0;
+    right:0;
+
+    
+    button{   
+
+        top: 30px;
+        transition: all 200ms;
+        font-size: 30px;
+        font-weight: bold;
+        text-decoration: none;
+        color:#fff;
+        background-color:#E66767;
+        border:none;
+        margin:8px;
+        cursor:pointer;
+    }
+}
+
+img{
+        width:280px;
+        height:280px;
+    }
+
+}
+
+.textoPoup{
+
+    color:#fff;
+    margin-left:24px;
 }
 
 
-.close{
-  top: 20px;
-  right: 30px;
-  transition: all 200ms;
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #333;
-}
 
 
 `

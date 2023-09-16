@@ -37,11 +37,18 @@ const PerfilCard = () => {
             </CardS>
             {popupModal && (
                 <Popup>
-                    <div id="popup1" className="overlay">
-                        <div className="popup">
-                            <h3>Here i am</h3>
-                            <button className="close" onClick={ClosePopup}>&times;</button>
+                    <div className="overlay">
+                        <div className="close"><button onClick={ClosePopup}>&times;</button></div>
+                        <img src={Pjapones}></img>
+                        <div className="textoPoup">
+                            <h3>Hioki Sushi </h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Est sapiente doloribus nam atque cupiditate modi blanditiis
+                                quia! Atque natus accusamus provident iure
+                                debitis dolores iusto corrupti ratione sint illum. Officia.</p>
+                            <h4>Adicionar ao Carrinho - R$ 60,90</h4>
                         </div>
+
                     </div>
                 </Popup>
             )}
