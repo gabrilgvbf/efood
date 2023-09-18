@@ -80,19 +80,19 @@ font-weight:700;
 `
 
 export const Popup = styled.div`
-position:fixed;
+ position:fixed; 
 top:0;
 left:0;
 right:0;
+bottom:0;
 background:rgba(0,0,0,.7);
 z-index:1000;
 
-.overlay{
-    display:flex;
-    
-   
 
+
+.overlay{
     position:fixed;
+    display:flex;
     top:48%;
     left:50%;
     transform:translate(-50%,-50%);
@@ -124,6 +124,7 @@ z-index:1000;
 img{
         width:280px;
         height:280px;
+        object-fit:cover;
     }
 
 }
@@ -132,6 +133,17 @@ img{
 
     color:#fff;
     margin-left:24px;
+    
+    h3{
+        padding-bottom:18px;
+        font-size:18px;
+    }
+    
+    p{
+        padding-bottom:20px;
+        font-size:14px;
+    }
+    
 }
 
 

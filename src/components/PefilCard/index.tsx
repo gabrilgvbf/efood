@@ -45,13 +45,19 @@ const PerfilCard = () => {
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                 Est sapiente doloribus nam atque cupiditate modi blanditiis
                                 quia! Atque natus accusamus provident iure
-                                debitis dolores iusto corrupti ratione sint illum. Officia.</p>
-                            <h4>Adicionar ao Carrinho - R$ 60,90</h4>
+                                debitis dolores iusto corrupti ratione sint
+                                ipsum dolor sit amet consectetur adipisicing elit.
+                                Est sapiente doloribus nam atque cupiditate modi blanditiis
+                                quia! Atque natus accusamus provident iure
+                                debitis dolores iusto corrupti ratione sint
+                                <br /><br />Serve 2 pessoas.</p>
+                            <BotaoP style={{ width: "auto", padding: "4px 7px" }}>Adicionar ao Carrinho - R$ 60,90</BotaoP>
                         </div>
 
                     </div>
                 </Popup>
-            )}
+            )
+            }
         </>
     )
 
