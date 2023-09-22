@@ -1,4 +1,4 @@
-import { CardS, HeaderP, TextoP, ImagemP, BotaoP, DescriçãoP, Tag, Popup } from "./styles"
+import { CardS, HeaderP, TextoP, ImagemP, BotaoP, DescriçãoP, Tag, Popup, TelaLateral, Btclose } from "./styles"
 import Pjapones from "./../../images/pjapones.png"
 import Estrela from "./../../images/estrela.png"
 import { useState } from "react"
@@ -14,8 +14,20 @@ const PerfilCard = () => {
     const OpenPopup = () => setpopupModal(true)
     const ClosePopup = () => setpopupModal(false)
 
+
+    const [lateralModal, setlateralModal] = useState(false)
+
+    const Openlateral = () => {
+        setlateralModal(true)
+        setpopupModal(false)
+    }
+    const Closelateral = () => setlateralModal(false)
+
+
+
     return (
         <>
+            {/* transformar tudo em lista  */}
             <CardS>
                 <ImagemP>
 
@@ -38,7 +50,7 @@ const PerfilCard = () => {
             {popupModal && (
                 <Popup>
                     <div className="overlay">
-                        <div className="close"><button onClick={ClosePopup}>&times;</button></div>
+                        <Btclose><button onClick={ClosePopup}>&times;</button></Btclose>
                         <img src={Pjapones}></img>
                         <div className="textoPoup">
                             <h3>Hioki Sushi </h3>
@@ -51,13 +63,24 @@ const PerfilCard = () => {
                                 quia! Atque natus accusamus provident iure
                                 debitis dolores iusto corrupti ratione sint
                                 <br /><br />Serve 2 pessoas.</p>
-                            <BotaoP style={{ width: "auto", padding: "4px 7px" }}>Adicionar ao Carrinho - R$ 60,90</BotaoP>
+                            <BotaoP style={{ width: "auto", padding: "4px 7px" }} onClick={Openlateral}>Adicionar ao Carrinho - R$ 60,90</BotaoP>
                         </div>
 
                     </div>
                 </Popup>
             )
             }
+            {lateralModal && (
+                <TelaLateral>
+                    <div className="overlay">
+                        <Btclose><button onClick={Closelateral}>&times;</button></Btclose>
+
+
+
+                    </div>
+                </TelaLateral>
+
+            )}
         </>
     )
 

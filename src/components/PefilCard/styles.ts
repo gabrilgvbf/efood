@@ -99,26 +99,6 @@ z-index:1000;
     padding:32px;
     background-color:#E66767;
     width:1024px;
-
-    .close{ 
-    position:absolute;
-    top:0;
-    right:0;
-
-    
-    button{   
-
-        top: 30px;
-        transition: all 200ms;
-        font-size: 30px;
-        font-weight: bold;
-        text-decoration: none;
-        color:#fff;
-        background-color:#E66767;
-        border:none;
-        margin:8px;
-        cursor:pointer;
-    }
 }
 
 img{
@@ -127,7 +107,7 @@ img{
         object-fit:cover;
     }
 
-}
+
 
 .textoPoup{
 
@@ -146,9 +126,51 @@ img{
     
 }
 
+`
 
+export const TelaLateral = styled.div`
+ position:fixed; 
+top:0;
+left:0;
+right:0;
+bottom:0;
+background:rgba(0,0,0,.7);
+z-index:1000;
+
+
+
+.overlay{
+    position:fixed;
+    right:0;
+    display:flex;
+    height:100vw;
+   
+    padding:32px;
+    background-color:#E66767;
+    width:360px;
+
+
+
+}
 
 
 `
+export const Btclose = styled.div`
 
+position:absolute;
+top:0;
+right:0;
 
+button{
+    top: 30px;
+transition: all 200ms;
+font-size: 30px;
+font-weight: bold;
+text-decoration: none;
+color:#fff;
+background-color:#E66767;
+border:none;
+margin:8px;
+cursor:pointer;
+}
+`
