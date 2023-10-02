@@ -2,6 +2,7 @@ import { CardS, HeaderP, TextoP, ImagemP, BotaoP, DescriçãoP, Tag, Popup, Tela
 import Pjapones from "./../../images/pjapones.png"
 import Estrela from "./../../images/estrela.png"
 import { useState } from "react"
+import Listalateral from "../ListaCarrinho/index"
 
 
 
@@ -74,6 +75,7 @@ const PerfilCard = () => {
                 <TelaLateral>
                     <div className="overlay">
                         <Btclose><button onClick={Closelateral}>&times;</button></Btclose>
+                        <Listalateral />
 
 
 

@@ -129,7 +129,7 @@ img{
 `
 
 export const TelaLateral = styled.div`
- position:fixed; 
+position:fixed; 
 top:0;
 left:0;
 right:0;
@@ -142,14 +142,13 @@ z-index:1000;
 .overlay{
     position:fixed;
     right:0;
-    display:flex;
+    display:inline-block;
     height:100vw;
-   
-    padding:32px;
+    padding:32px 8px;
     background-color:#E66767;
     width:360px;
-
-
+    
+    
 
 }
 
