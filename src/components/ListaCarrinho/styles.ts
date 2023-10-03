@@ -45,6 +45,13 @@ display:flex;
 flex-direction:column;
 justify-content:right;
 
+p{
+    font-size:14px;
+    font-weight:400;
+    text-align:left;
+    line-height:1.5;
+    color:#fff;
+}
 h3{
     font-size:18px;
     color:#fff;
