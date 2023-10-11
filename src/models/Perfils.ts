@@ -1,0 +1,35 @@
+class Perfil {
+    id: number
+    NomePerfil: string
+    Nota: number
+    TexApresent: string
+    ImgPerfil: string
+    PaisTipico: string
+
+    constructor(
+        id: number,
+        NomePerfil: string,
+        Nota: number,
+        TexApresent: string,
+        ImgPerfil: string,
+        PaisTipico: string
+
+    ) {
+        this.id = id
+        this.NomePerfil = NomePerfil
+        this.Nota = Nota
+        this.TexApresent = TexApresent
+        this.ImgPerfil = ImgPerfil
+        this.PaisTipico = PaisTipico
+    }
+}
+
+
+export default Perfil
+
+
+
+
+
+
+//FALTA ADICIONAR O ROUTER REACT - POR O CAMINHO DA PAGINA PRODUTOS COMO PROPRIEDADE NO PERFIL 

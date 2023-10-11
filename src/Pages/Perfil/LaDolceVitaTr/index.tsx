@@ -1,13 +1,21 @@
-import { CardS, HeaderP, TextoP, ImagemP, BotaoP, DescriçãoP, Tag, Popup, TelaLateral, Btclose } from "./styles"
+import { CardS, HeaderP, TextoP, ImagemP, BotaoP, DescriçãoP, Tag, Popup, TelaLateral, Btclose } from "../../../components/PefilCard/styles"
 import Pjapones from "./../../images/pjapones.png"
 import { useState } from "react"
-import Listalateral from "../ListaCarrinho/index"
+import Listalateral from "../../../components/ListaCarrinho/index"
+import { PerfilLaDolceVitaTr } from "../../../components/store/reducers/Produtos"
+
+interface CardProps {
+    produto: {
+        id: number,
+        NomeProduto: string,
+        TexApresent: string,
+        ImgProd: string
+    }
+}
 
 
 
-
-
-const PerfilCard = () => {
+const PerfilCard: React.FC<CardProps> = () => {
 
     const [popupModal, setpopupModal] = useState(false)
 
@@ -27,26 +35,29 @@ const PerfilCard = () => {
 
     return (
         <>
-            {/* transformar tudo em lista  */}
-            <CardS>
-                <ImagemP>
+            {
+                PerfilLaDolceVitaTr.itens.map((produto) => (
+                    <CardS>
+                        <ImagemP>
 
-                    <img src={Pjapones}></img>
+                            <img src={produto.ImgProd}></img>
 
-                </ImagemP>
+                        </ImagemP>
 
-                <DescriçãoP>
-                    <HeaderP>
-                        <h3> Hioki Sushi</h3>
+                        <DescriçãoP>
+                            <HeaderP>
+                                <h3>{produto.NomeProduto}</h3>
 
-                    </HeaderP>
+                            </HeaderP>
 
-                    <TextoP>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda vel, pariatur dignissimos eligendi, consequatur nesciunt nam repellendus veniam accusantium nostrum perspiciatis, nulla eum architecto modi laborum. Placeat veritatis alias velit!</TextoP>
+                            <TextoP>{produto.TexApresent}</TextoP>
 
-                    <BotaoP onClick={OpenPopup}>Adicionar ao carrinho</BotaoP>
-                </DescriçãoP>
+                            <BotaoP onClick={OpenPopup}>Adicionar ao carrinho</BotaoP>
+                        </DescriçãoP>
 
-            </CardS>
+                    </CardS>
+                ))
+            }
             {popupModal && (
                 <Popup>
                     <div className="overlay">
@@ -82,7 +93,9 @@ const PerfilCard = () => {
                 </TelaLateral>
 
             )}
+
         </>
+
     )
 
 }
