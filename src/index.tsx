@@ -3,42 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// 1 - configurando o Router
 
-import {
-  createBrowserRouter,
-  RouterProvider
-}
-  from "react-router-dom"
-
-import Home from "../src/Pages/Home"
-import PerfilLDV from "../src/Pages/Perfil/LaDolceVitaTr"
-import PerfilHS from './Pages/Perfil/HiokiSushi';
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />
-  },
-  {
-    path: "PerfilLDV",
-    element: <PerfilLDV produto={{
-      id: 0,
-      NomeProduto: '',
-      TexApresent: '',
-      ImgProd: ''
-    }} />
-  },
-  {
-    path: "PerfilHS",
-    element: <PerfilHS produto={{
-      id: 0,
-      NomeProduto: '',
-      TexApresent: '',
-      ImgProd: ''
-    }} />
-  }
-])
 
 
 const root = ReactDOM.createRoot(
@@ -46,7 +11,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <App />
   </React.StrictMode>
 );
 
