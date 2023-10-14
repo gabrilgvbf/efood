@@ -1,3 +1,5 @@
+import { profileEnd } from "console"
+
 class Perfil {
     id: number
     NomePerfil: string
@@ -5,6 +7,7 @@ class Perfil {
     TexApresent: string
     ImgPerfil: string
     PaisTipico: string
+    ProdutosPg: string
 
     constructor(
         id: number,
@@ -12,7 +15,8 @@ class Perfil {
         Nota: number,
         TexApresent: string,
         ImgPerfil: string,
-        PaisTipico: string
+        PaisTipico: string,
+        ProdutosPg: string
 
     ) {
         this.id = id
@@ -21,6 +25,7 @@ class Perfil {
         this.TexApresent = TexApresent
         this.ImgPerfil = ImgPerfil
         this.PaisTipico = PaisTipico
+        this.ProdutosPg = ProdutosPg
     }
 }
 

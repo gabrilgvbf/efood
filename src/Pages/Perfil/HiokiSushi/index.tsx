@@ -2,7 +2,7 @@ import { CardS, HeaderP, TextoP, ImagemP, BotaoP, DescriçãoP, Tag, Popup, Tela
 import Pjapones from "../../../images//pjapones.png"
 import { useState } from "react"
 import Listalateral from "../../../components/ListaCarrinho/index"
-import { PerfilLaDolceVitaTr } from "../../../components/store/reducers/Produtos"
+import { PerfilLHiokiSushi } from "../../../components/store/reducers/Produtos"
 
 interface CardProps {
     produto: {
@@ -15,7 +15,7 @@ interface CardProps {
 
 
 
-const PerfilLDV: React.FC<CardProps> = () => {
+const PerfilHS: React.FC<CardProps> = () => {
 
     const [popupModal, setpopupModal] = useState(false)
 
@@ -36,7 +36,7 @@ const PerfilLDV: React.FC<CardProps> = () => {
     return (
         <>
             {
-                PerfilLaDolceVitaTr.itens.map((produto) => (
+                PerfilLHiokiSushi.itens.map((produto) => (
                     <CardS>
                         <ImagemP>
 
@@ -114,4 +114,4 @@ const PerfilLDV: React.FC<CardProps> = () => {
 // }
 
 
-export default PerfilLDV
+export default PerfilHS

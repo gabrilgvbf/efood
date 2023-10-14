@@ -1,5 +1,5 @@
 import { CardS, Nota, HeaderP, TextoP, ImagemP, BotaoP, DescriçãoP, Tag } from "./styles"
-
+import { Link } from "react-router-dom"
 import Estrela from "./../../images/estrela.png"
 import ListaPerfil from "../store/reducers/Perfils"
 
@@ -9,6 +9,7 @@ interface CardProps {
         NomePerfil: string;
         Nota: number;
         TexApresent: string;
+        ProdutosPg: string;
     }
 }
 const Card: React.FC<CardProps> = () => {
@@ -38,7 +39,7 @@ const Card: React.FC<CardProps> = () => {
 
                             <TextoP>{perfil.TexApresent}</TextoP>
 
-                            <BotaoP>Saiba mais</BotaoP>
+                            <BotaoP><Link to={perfil.ProdutosPg}>Saiba mais</Link></BotaoP>
                         </DescriçãoP>
                     </CardS>
                 )
