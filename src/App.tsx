@@ -12,6 +12,7 @@ import {
 import Home from "../src/Pages/Home"
 import PerfilLDV from "../src/Pages/Perfil/LaDolceVitaTr"
 import PerfilHS from './Pages/Perfil/HiokiSushi';
+import { NomePerfil } from './components/PefilListCard/styles';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
       NomeProduto: '',
       TexApresent: '',
       ImgProd: ''
+
     }} />
   },
   {
@@ -33,7 +35,8 @@ const router = createBrowserRouter([
       id: 0,
       NomeProduto: '',
       TexApresent: '',
-      ImgProd: ''
+      ImgProd: '',
+      NomePerfil: ''
     }} />
   }
 ])

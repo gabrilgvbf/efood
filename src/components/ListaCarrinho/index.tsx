@@ -2,7 +2,7 @@ import React from "react";
 
 import { Produto, ListaProdutos, InfEntrega } from "./styles";
 import pjapones from "../../images/pjapones.png"
-import { BotaoP } from "../PefilCard/styles"
+import { BotaoP } from "../PerfilCard/styles"
 const Listalateral = () => (
     <>
         {/* <ListaProdutos>

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import ImgHero from '../../images/imgperfil.png'
 import ImgFiltro from '../../images/filtroimgperfil.png'
+
 export const ListaCardS = styled.div`
 
 display:grid;

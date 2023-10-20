@@ -1,9 +1,9 @@
-import { CardS, HeaderP, TextoP, ImagemP, BotaoP, DescriçãoP, Tag, Popup, TelaLateral, Btclose } from "../../../components/PefilCard/styles"
+import { CardS, HeaderP, TextoP, ImagemP, BotaoP, DescriçãoP, Tag, Popup, TelaLateral, Btclose } from "../../../components/PerfilCard/styles"
 import Pjapones from "../../../images//pjapones.png"
 import { useState } from "react"
 import Listalateral from "../../../components/ListaCarrinho/index"
 import { PerfilLaDolceVitaTr } from "../../../components/store/reducers/Produtos"
-
+import { ListaCardS, HeroPerfil, Nacio, NomePerfil, HeaderHeroPerfil } from '../../../components/PefilListCard/styles'
 interface CardProps {
     produto: {
         id: number,
@@ -32,86 +32,82 @@ const PerfilLDV: React.FC<CardProps> = () => {
     const Closelateral = () => setlateralModal(false)
 
 
-
     return (
         <>
-            {
-                PerfilLaDolceVitaTr.itens.map((produto) => (
-                    <CardS>
-                        <ImagemP>
+            <HeroPerfil className='Container'>
+                <HeaderHeroPerfil>
+                    <Nacio>Italiana</Nacio>
+                    <NomePerfil>La Dolce Vita Trattoria</NomePerfil>
+                </HeaderHeroPerfil>
+            </HeroPerfil>
 
-                            <img src={produto.ImgProd}></img>
 
-                        </ImagemP>
+            <ListaCardS className='Container'>
+                {
+                    PerfilLaDolceVitaTr.itens.map((produto) => (
+                        <CardS>
+                            <ImagemP>
 
-                        <DescriçãoP>
-                            <HeaderP>
-                                <h3>{produto.NomeProduto}</h3>
+                                <img src={produto.ImgProd}></img>
 
-                            </HeaderP>
+                            </ImagemP>
 
-                            <TextoP>{produto.TexApresent}</TextoP>
+                            <DescriçãoP>
+                                <HeaderP>
+                                    <h3>{produto.NomeProduto}</h3>
 
-                            <BotaoP onClick={OpenPopup}>Adicionar ao carrinho</BotaoP>
-                        </DescriçãoP>
+                                </HeaderP>
 
-                    </CardS>
-                ))
-            }
-            {popupModal && (
-                <Popup>
-                    <div className="overlay">
-                        <Btclose><button onClick={ClosePopup}>&times;</button></Btclose>
-                        <img src={Pjapones}></img>
-                        <div className="textoPoup">
-                            <h3>Hioki Sushi </h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Est sapiente doloribus nam atque cupiditate modi blanditiis
-                                quia! Atque natus accusamus provident iure
-                                debitis dolores iusto corrupti ratione sint
-                                ipsum dolor sit amet consectetur adipisicing elit.
-                                Est sapiente doloribus nam atque cupiditate modi blanditiis
-                                quia! Atque natus accusamus provident iure
-                                debitis dolores iusto corrupti ratione sint
-                                <br /><br />Serve 2 pessoas.</p>
-                            <BotaoP style={{ width: "auto", padding: "4px 7px" }} onClick={Openlateral}>Adicionar ao Carrinho - R$ 60,90</BotaoP>
+                                <TextoP>{produto.TexApresent}</TextoP>
+
+                                <BotaoP onClick={OpenPopup}>Adicionar ao carrinho</BotaoP>
+                            </DescriçãoP>
+
+                        </CardS>
+                    ))
+                }
+                {popupModal && (
+                    <Popup>
+                        <div className="overlay">
+                            <Btclose><button onClick={ClosePopup}>&times;</button></Btclose>
+                            <img src={Pjapones}></img>
+                            <div className="textoPoup">
+                                <h3>Hioki Sushi </h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Est sapiente doloribus nam atque cupiditate modi blanditiis
+                                    quia! Atque natus accusamus provident iure
+                                    debitis dolores iusto corrupti ratione sint
+                                    ipsum dolor sit amet consectetur adipisicing elit.
+                                    Est sapiente doloribus nam atque cupiditate modi blanditiis
+                                    quia! Atque natus accusamus provident iure
+                                    debitis dolores iusto corrupti ratione sint
+                                    <br /><br />Serve 2 pessoas.</p>
+                                <BotaoP style={{ width: "auto", padding: "4px 7px" }} onClick={Openlateral}>Adicionar ao Carrinho - R$ 60,90</BotaoP>
+                            </div>
+
                         </div>
-
-                    </div>
-                </Popup>
-            )
-            }
-            {lateralModal && (
-                <TelaLateral>
-                    <div className="overlay">
-                        <Btclose><button onClick={Closelateral}>&times;</button></Btclose>
-                        <Listalateral />
+                    </Popup>
+                )
+                }
+                {lateralModal && (
+                    <TelaLateral>
+                        <div className="overlay">
+                            <Btclose><button onClick={Closelateral}>&times;</button></Btclose>
+                            <Listalateral />
 
 
 
-                    </div>
-                </TelaLateral>
+                        </div>
+                    </TelaLateral>
 
-            )}
+                )}
 
+            </ListaCardS>
         </>
+
+
 
     )
 
 }
-
-
-// const Perfil1 = ()=>{
-
-// <>
-// {PerfilLaDolceVitaTr.itens.map(produto)=>(
-//     <PerfilLDV produto={}/>
-// )
-
-// }
-// </>
-
-// }
-
-
 export default PerfilLDV

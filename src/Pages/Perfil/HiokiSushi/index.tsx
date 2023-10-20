@@ -1,117 +1,106 @@
-import { CardS, HeaderP, TextoP, ImagemP, BotaoP, DescriçãoP, Tag, Popup, TelaLateral, Btclose } from "../../../components/PefilCard/styles"
-import Pjapones from "../../../images//pjapones.png"
-import { useState } from "react"
-import Listalateral from "../../../components/ListaCarrinho/index"
-import { PerfilLHiokiSushi } from "../../../components/store/reducers/Produtos"
+import React, { useState } from 'react';
+import {
+    CardS,
+    HeaderP,
+    TextoP,
+    ImagemP,
+    BotaoP,
+    DescriçãoP,
+    Tag,
+    Popup,
+    TelaLateral,
+    Btclose,
+} from '../../../components/PerfilCard/styles';
+import Pjapones from '../../../images/pjapones.png';
+import Listalateral from '../../../components/ListaCarrinho/index';
+import { PerfilLHiokiSushi } from '../../../components/store/reducers/Produtos';
+import Produto from '../../../models/Produtos';
 
 interface CardProps {
     produto: {
-        id: number,
-        NomeProduto: string,
-        TexApresent: string,
-        ImgProd: string
-    }
+        id: number;
+        NomeProduto: string;
+        TexApresent: string;
+        ImgProd: string;
+        NomePerfil: string;
+    };
 }
 
-
-
 const PerfilHS: React.FC<CardProps> = () => {
+    const [popupModal, setPopupModal] = useState(false);
+    const [lateralModal, setLateralModal] = useState(false);
+    const [selectedProduto, setSelectedProduto] = useState<Produto | null>(null); // Armazena o produto selecionado
 
-    const [popupModal, setpopupModal] = useState(false)
+    const OpenPopup = (produto: Produto) => {
+        setPopupModal(true);
+        setSelectedProduto(produto); // Define o produto selecionado
+    };
 
-    const OpenPopup = () => setpopupModal(true)
-    const ClosePopup = () => setpopupModal(false)
+    const ClosePopup = () => {
+        setPopupModal(false);
+        setSelectedProduto(null); // Limpa o produto selecionado ao fechar o modal
+    };
 
+    const OpenLateral = (produto: Produto) => {
+        setLateralModal(true);
+        setPopupModal(false);
+        setSelectedProduto(produto); // Define o produto selecionado
+    };
 
-    const [lateralModal, setlateralModal] = useState(false)
-
-    const Openlateral = () => {
-        setlateralModal(true)
-        setpopupModal(false)
-    }
-    const Closelateral = () => setlateralModal(false)
-
-
+    const CloseLateral = () => {
+        setLateralModal(false);
+        setSelectedProduto(null); // Limpa o produto selecionado ao fechar o modal
+    };
 
     return (
         <>
-            {
-                PerfilLHiokiSushi.itens.map((produto) => (
-                    <CardS>
-                        <ImagemP>
-
-                            <img src={produto.ImgProd}></img>
-
-                        </ImagemP>
-
-                        <DescriçãoP>
-                            <HeaderP>
-                                <h3>{produto.NomeProduto}</h3>
-
-                            </HeaderP>
-
-                            <TextoP>{produto.TexApresent}</TextoP>
-
-                            <BotaoP onClick={OpenPopup}>Adicionar ao carrinho</BotaoP>
-                        </DescriçãoP>
-
-                    </CardS>
-                ))
-            }
-            {popupModal && (
+            {PerfilLHiokiSushi.itens.map((produto) => (
+                <CardS key={produto.id}>
+                    <ImagemP>
+                        <img src={produto.ImgProd} alt={produto.NomeProduto} />
+                    </ImagemP>
+                    <DescriçãoP>
+                        <HeaderP>
+                            <h3>{produto.NomeProduto}</h3>
+                        </HeaderP>
+                        <TextoP>{produto.TexApresent}</TextoP>
+                        <BotaoP onClick={() => OpenPopup(produto)}>Adicionar ao carrinho</BotaoP>
+                    </DescriçãoP>
+                </CardS>
+            ))}
+            {popupModal && selectedProduto && (
                 <Popup>
                     <div className="overlay">
-                        <Btclose><button onClick={ClosePopup}>&times;</button></Btclose>
-                        <img src={Pjapones}></img>
+                        <Btclose>
+                            <button onClick={ClosePopup}>&times;</button>
+                        </Btclose>
+                        <img src={Pjapones} alt={selectedProduto.NomeProduto} />
                         <div className="textoPoup">
-                            <h3>Hioki Sushi </h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Est sapiente doloribus nam atque cupiditate modi blanditiis
-                                quia! Atque natus accusamus provident iure
-                                debitis dolores iusto corrupti ratione sint
-                                ipsum dolor sit amet consectetur adipisicing elit.
-                                Est sapiente doloribus nam atque cupiditate modi blanditiis
-                                quia! Atque natus accusamus provident iure
-                                debitis dolores iusto corrupti ratione sint
-                                <br /><br />Serve 2 pessoas.</p>
-                            <BotaoP style={{ width: "auto", padding: "4px 7px" }} onClick={Openlateral}>Adicionar ao Carrinho - R$ 60,90</BotaoP>
+                            <h3>{selectedProduto.NomePerfil}</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde omnis
+                                dolorem quidem molestias voluptatum doloribus impedit excepturi,
+                                praesentium obcaecati amet iure asperiores quae repellat pariatur velit modi eum ullam voluptatem.
+                            </p>
+                            <BotaoP style={{ width: 'auto', padding: '4px 7px' }} onClick={() => OpenLateral(selectedProduto)}>
+                                Adicionar ao Carrinho - R$ 60,90
+                            </BotaoP>
                         </div>
-
                     </div>
                 </Popup>
-            )
-            }
+            )}
             {lateralModal && (
                 <TelaLateral>
                     <div className="overlay">
-                        <Btclose><button onClick={Closelateral}>&times;</button></Btclose>
+                        <Btclose>
+                            <button onClick={CloseLateral}>&times;</button>
+                        </Btclose>
                         <Listalateral />
-
-
-
                     </div>
                 </TelaLateral>
-
             )}
-
         </>
+    );
+};
 
-    )
-
-}
-
-
-// const Perfil1 = ()=>{
-
-// <>
-// {PerfilLaDolceVitaTr.itens.map(produto)=>(
-//     <PerfilLDV produto={}/>
-// )
-
-// }
-// </>
-
-// }
-
-
-export default PerfilHS
+export default PerfilHS;
